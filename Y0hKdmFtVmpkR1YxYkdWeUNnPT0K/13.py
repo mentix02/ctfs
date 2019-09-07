@@ -101,6 +101,6 @@ nums = """37107287533902102798797998220837590246510135740250
 
 nums = nums.splitlines()
 
-nums = list(map(int, nums))
+nums = map(int, nums)
 
-print(str(sum(nums))[0:10])
+print(str(sum(nums))[:10])

@@ -14,7 +14,7 @@ long long int return_length(long int num) {
 }
 
 int main() {
-  
+
   long long int longest = 1, num = 0;
 
   long long int count_once = 0;
@@ -24,13 +24,13 @@ int main() {
     count_once = return_length(i);
     //printf("%i\n", count_once);
 
-    printf("%lld : %i \n", i, count_once);
-    
+    // printf("%li : %lld \n", i, count_once);
+
     if (longest <= count_once) {
       longest = count_once;
       num = i;
     }
-    
+
   }
   printf("%lld\n", num);
   return 0;

@@ -1,26 +1,21 @@
 #!/usr/bin/python3
 
-num = int(input('enter a number to find its prime factorials : '))
+from prime import prime
 
-def is_prime(num):
-    for i in range(1, num+1):
-        if i == 1 or i == num:
-            pass
+num = 600851475143
+
+def facts(n):
+    i = 2
+    factors = []
+    while i * i <= n:
+        if n % i:
+            i += 1
         else:
-            if num % i == 0:
-                return False
-    else:
-        return True
+            n //= i
+            factors.append(i)
+    if n > 1:
+        factors.append(n)
+    return factors
 
-def facts(num):
-    nums = []
-    for i in range(1, num+1):
-        if num % i == 0:
-            if is_prime(i):
-                if i == 1 or i == num:
-                    pass
-                else:
-                    nums.append(i)
-    return nums
-
-print(facts(num))
+if __name__ == '__main__':
+    print(max(facts(num)))

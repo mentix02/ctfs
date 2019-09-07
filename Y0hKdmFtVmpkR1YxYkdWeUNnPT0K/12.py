@@ -1,15 +1,21 @@
-import typing
+from functools import reduce
 
-count = 1
+count = 3159
 
-def factors_len(n: int) -> typing.List[int]:
-    return len([i for i in range(1, n+1) if n % i == 0])
+def nu_of_factors1(n):
+    result_set = set()
+    sqrtn = int(n**0.5)
+    for i in range(1,sqrtn+1):
+        q, r = n/i, n%i
+        if r == 0:
+            result_set.add(q)
+            result_set.add(i)
+    return len(result_set)
 
 while True:
-    tri_number = (count ** 2 + 1) // 2
-    f_l = factors_len(tri_number)
+    tri_number = int(count * (count + 1) / 2)
+    f_l = nu_of_factors1(tri_number)
     if f_l >= 500:
         print(tri_number)
         break
     count += 1
-    print(f'Num: {count}, triangle: {tri_number}, factors: {f_l}')
